@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy Address</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>OutSid</h1>
+    <img src="eth.png" class="copy-image main-logo" onmouseover="showTooltip()" onmouseout="hideTooltip()" onclick="copyText()">
+    <img src="polygon.png" class="copy-image left-logo" onmouseover="showTooltipLeft()" onmouseout="hideTooltipLeft()" onclick="copyTextLeft()">
+    <img src="bitcoin.png" class="copy-image right-logo" onmouseover="showTooltipRight()" onmouseout="hideTooltipRight()" onclick="copyTextRight()">
+    <div id="tooltip" class="tooltip"><span>Copy address</span></div>
+    <div id="tooltip-left" class="tooltip"><span>Copy address</span></div>
+    <div id="tooltip-right" class="tooltip"><span>Copy address</span></div>
+    <audio autoplay loop src="audio.mp3" loop=""></audio>
+    <video controls loop autoplay muted id="mavideo" src="video.mp4" controls width=""></video>
+
+    <script>
+        function copyText() {
+            const textToCopy = "0x8b403699d2961d2328B36eC68b5FCe9018373A62";
+
+            const tempInput = document.createElement("input");
+            tempInput.value = textToCopy;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+
+            const tooltip = document.getElementById("tooltip");
+            const span = tooltip.querySelector('span');
+            span.textContent = "Copied!";
+            setTimeout(() => {
+                span.textContent = "Copy address";
+            }, 2000);
+        }
+
+        function copyTextLeft() {
+            const textToCopy = "0x8b403699d2961d2328B36eC68b5FCe9018373A62";
+
+            const tempInput = document.createElement("input");
+            tempInput.value = textToCopy;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+
+            const tooltip = document.getElementById("tooltip-left");
+            const span = tooltip.querySelector('span');
+            span.textContent = "Copied!";
+            setTimeout(() => {
+                span.textContent = "Copy address";
+            }, 2000);
+        }
+
+        function copyTextRight() {
+            const textToCopy = "bc1pxetwyazewpnh0cxrfzqzczm27fagy89pzhafntyweptgccp37yzsrsumhw";
+
+            const tempInput = document.createElement("input");
+            tempInput.value = textToCopy;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+
+            const tooltip = document.getElementById("tooltip-right");
+            const span = tooltip.querySelector('span');
+            span.textContent = "Copied!";
+            setTimeout(() => {
+                span.textContent = "Copy address";
+            }, 2000);
+        }
+
+        function showTooltip() {
+            const tooltip = document.getElementById("tooltip");
+            tooltip.style.visibility = 'visible';
+            tooltip.style.opacity = '1';
+        }
+
+        function hideTooltip() {
+            const tooltip = document.getElementById("tooltip");
+            tooltip.style.visibility = 'hidden';
+            tooltip.style.opacity = '0';
+        }
+
+        function showTooltipLeft() {
+            const tooltip = document.getElementById("tooltip-left");
+            tooltip.style.visibility = 'visible';
+            tooltip.style.opacity = '1';
+        }
+
+        function hideTooltipLeft() {
+            const tooltip = document.getElementById("tooltip-left");
+            tooltip.style.visibility = 'hidden';
+            tooltip.style.opacity = '0';
+        }
+
+        function showTooltipRight() {
+            const tooltip = document.getElementById("tooltip-right");
+            tooltip.style.visibility = 'visible';
+            tooltip.style.opacity = '1';
+        }
+
+        function hideTooltipRight() {
+            const tooltip = document.getElementById("tooltip-right");
+            tooltip.style.visibility = 'hidden';
+            tooltip.style.opacity = '0';
+        }
+    </script>
+    <script type="text/javascript" src="index.js"></script>
+</body>
+</html>
